@@ -51,6 +51,10 @@ Password: airflow
 - Trigger the `sandbox` pipeline
 - View the graph od `sandbox` pipeline and click on "Logs" tab to check the successful execution
 - Navigate to `http://0.0.0.0:8095/docs#` to access the FastAPI Swagger!
+- Clean up the environment once done
+```
+make down
+```
 
 ## Airflow pipeline
 
@@ -107,10 +111,6 @@ Here is a description of each API endpoint:
 ```
 Hummel,  Johann
 ```
-
-### Summary
-These endpoints provide valuable insights and trends from the dataset, allowing users to query specific aspects of the data, such as the number of concerts per season, the most common conductor, the number of works per composer, soloists by instrument, and the most frequent compositions by a specific composer. Each endpoint is designed to handle exceptions gracefully and return a JSON response with the relevant data or an error message.
-
 
 ## Data Sources
 
