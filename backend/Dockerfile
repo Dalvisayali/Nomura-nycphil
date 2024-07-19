@@ -10,8 +10,8 @@ RUN pip install --upgrade pip
 WORKDIR /app
 # Change working dir to app
 
-# ADD .env main.py requirements.txt model.py database.py /app/
-ADD .env main.py requirements.txt /app/
+# ADD main.py requirements.txt model.py database.py /app/
+ADD main.py requirements.txt /app/
 ADD routers /app/routers/
 ADD db_utils /app/db_utils/
 ADD tests /app/tests/

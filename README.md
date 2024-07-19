@@ -21,14 +21,7 @@ This project involves converting raw concert data into a structured, normalized 
 ## Steps to make it run on your machine
 
 - Clone the github repository on local
-- Create env file in ‘./airflow/config’; ‘./backend’; and ‘./’ directories
-- Create a virtual environment using ‘python -m venv ./venv’
-- Make sure you have docker daemon running on your local machine
-- Navigate to the project directory and run ‘docker compose build’ to build the images
-- Then execute ‘docker compose up’ to run the images as containers
-- To stop the running containers press Ctrl + C / Cmd + C and then execute docker compose down to remove the containers as a cleanup step
-
-## Empty .env structure for './airflow/config', './backend', and './'
+- Create env file in the Project file
 
 ```
 # Used in DAG
@@ -43,6 +36,21 @@ SNOWFLAKE_SCHEMA = ''
 AIRFLOW_UID=50000
 AIRFLOW_PROJ_DIR=./airflow
 ```
+
+- Make sure you have docker daemon running on your local machine
+- Run the make command to build and deploy
+```
+make build-up
+```
+- Login to airflow dashboard at `http://0.0.0.0:8080/home`
+```
+Username: airflow
+Password: airflow
+```
+
+- Trigger the `sandbox` pipeline
+- View the graph od `sandbox` pipeline and click on "Logs" tab to check the successful execution
+- Navigate to `http://0.0.0.0:8095/docs#` to access the FastAPI Swagger!
 
 ## Airflow pipeline
 
@@ -112,6 +120,21 @@ The New York Philharmonic played its first concert on December 7, 1842. Since th
 
 ## Tools and Technologies:
 
-- Backend : FastAPI
-- Database : Snowflake
-- Automation : Airflow
+This project implements an ETL pipeline using Apache Airflow for data cleaning, Snowflake for data storage, and FastAPI to expose the backend. Each component has been carefully chosen to leverage its strengths in handling specific aspects of the pipeline.
+
+#### Component Responsibilities
+
+1. **Apache Airflow**
+   - **Data Loading**: Reads raw JSON data and normalizes it into structured Pandas DataFrames.
+   - **Data Cleaning**: Processes the data to handle null values, convert data types, and ensure data integrity.
+   - **Workflow Management**: Manages the sequence and dependencies of tasks, ensuring that each step of the ETL process is executed in the correct order.
+
+2. **Snowflake**
+   - **Data Storage**: Stores the cleaned and structured data, making it available for querying and analysis.
+   - **Data Warehousing**: Provides a scalable and efficient platform for storing large volumes of data, with support for complex queries and integration with various data tools.
+
+3. **FastAPI**
+   - **Backend API**: Exposes the processed data through a RESTful API, allowing external systems and users to access and interact with the data.
+   - **Interactive Documentation**: Provides automatically generated and interactive API documentation, making it easy for developers to understand and use the API endpoints.
+
+

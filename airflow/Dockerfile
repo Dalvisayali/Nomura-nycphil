@@ -1,17 +1,12 @@
-# Use the official Apache Airflow image as the base image
 FROM apache/airflow:2.8.3
 
-# Copy the requirements file into the container
-COPY requirements.txt .
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends wget unzip build-essential libsndfile1 libopenmpi-dev && apt-get autoremove -yqq --purge && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get autoremove -yqq --purge \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+RUN apt-get install wget
+COPY requirements.txt /
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-# RUN pip install --no-cache-dir -r requirements.txt
-
-# COPY ./test/requirements.txt .
-
-# # Install Python dependencies
-# RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy other necessary files and configurations
-# COPY . .
+USER airflow
+RUN pip install --no-cache-dir "apache-airflow==${AIRFLOW_VERSION}" -r /requirements.txt

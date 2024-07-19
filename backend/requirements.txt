@@ -11,20 +11,8 @@ python-multipart
 httpx
 pytest
 sqlmodel
-# bcrypt
-# python-jose
-# pydantic
-# google-generativeai
-# openai
 pandas
-# pinecone-client
 Pillow
 requests
-# xmltodict
-# torch
-# transformers
-# google-api-core
-# google-auth
-# google-cloud-core
-# google-cloud-storage
+
 

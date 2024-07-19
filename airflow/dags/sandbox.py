@@ -26,12 +26,13 @@ Base = declarative_base()
 
 load_dotenv()
 
-SNOWFLAKE_USER = "dalvisayali97"
-SNOWFLAKE_PASSWORD = "Qwerty12345"
-SNOWFLAKE_DATABASE = "NYCPHIL_DB"
-SNOWFLAKE_ACCOUNT = "affjtns-bv95929"
-SNOWFLAKE_WAREHOUSE = "COMPUTE_WH"
-SNOWFLAKE_SCHEMA = "PUBLIC"
+# Snowflake connection details
+SNOWFLAKE_USER = os.getenv("SNOWFLAKE_USER")
+SNOWFLAKE_PASSWORD = os.getenv("SNOWFLAKE_PASSWORD")
+SNOWFLAKE_ACCOUNT = os.getenv("SNOWFLAKE_ACCOUNT")
+SNOWFLAKE_WAREHOUSE = os.getenv("SNOWFLAKE_WAREHOUSE")
+SNOWFLAKE_DATABASE = os.getenv("SNOWFLAKE_DATABASE")
+SNOWFLAKE_SCHEMA = os.getenv("SNOWFLAKE_SCHEMA")
 
 
 def print_df_info(dfs, df_names):
@@ -351,30 +352,6 @@ with dag:
         provide_context = True,
         dag = dag,
     )
-    
-    # upload_gcp2snowflake_main = PythonOperator(
-    #     task_id = 'Upload_from_GCP_to_Snowflake',
-    #     python_callable = upload_gcp2snowflake_main,
-    #     provide_context = True,
-    #     dag = dag,
-    # )
-    
-    # upload_recipeName2pinecone = PythonOperator(
-    #     task_id='Upload_to_Pinecone_Recipe_Name_namespace',
-    #     python_callable=upload_embeddings2pinecone_test,
-    #     provide_context=True,
-    #     op_args = [os.getenv('PINECONE_NAMESPACE_1') ,'name', 20],
-    #     dag=dag,
-    # )
-
-    # upload_ingredients2pinecone = PythonOperator(
-    #     task_id='Upload_to_Pinecone_Ingredient_namespace',
-    #     python_callable=upload_embeddings2pinecone_test,
-    #     provide_context=True,   
-    #     op_args = [os.getenv('PINECONE_NAMESPACE_2'),'recipeingredientparts', 20],
-    #     dag=dag,
-    # )
-
+   
     start >> preprocess_main
-    # >> upload_csv2gcp_main >> upload_gcp2snowflake_main >> upload_recipeName2pinecone >> upload_ingredients2pinecone
 
