@@ -1,10 +1,22 @@
 # NOMURA - NY Philharmonic Performance History Analysis
 
-The project aims to develop a personalized meal planner application that utilizes data from various sources, including nutritional databases, user input, and meal suggestion algorithms. The application will be developed using modern web and mobile technologies, leveraging frameworks such as React.js for frontend development and Node.js for backend functionality. The expected deliverables include a user-friendly interface for meal planning, calorie tracking features, personalized meal suggestions, and data visualization capabilities.
+This project involves converting raw concert data into a structured, normalized relational database, loading it into a chosen database system, and creating APIs to publish various aggregates and analyses of the dataset. The goal is to transform the data into a format that supports efficient querying and analysis, enabling insightful reports and data-driven decision-making.
 
-## Documentation
+#### Objectives
+1. **Data Conversion and Normalization**:
+    - Convert the raw concert data into a set of relational tables.
+    - Normalize the data to eliminate redundancy and ensure data integrity.
+    - Define appropriate relationships between tables using foreign keys.
 
-[![codelabs](https://img.shields.io/badge/codelabs-4285F4?style=for-the-badge&logo=codelabs&logoColor=white)](https://codelabs-preview.appspot.com/?file_id=1r6Cg_miHqOiVv43CM6GhOtq1ZWK9lf6mIlYW7VNuSVk)
+2. **Database Loading**:
+    - Load the normalized tables into a database system of your choice (e.g. Snowflake).
+    - Ensure data consistency and integrity during the loading process.
+
+3. **API Development**:
+    - Create APIs to publish various aggregates and analyses of the dataset.
+    - Provide endpoints that allow users to input parameters and get meaningful insights.
+    - Handle errors gracefully and return informative error messages.
+
 
 ## Steps to make it run on your machine
 
@@ -84,7 +96,8 @@ Here is a description of each API endpoint:
 **Description**: This endpoint retrieves the most frequently performed compositions by a specific composer. It provides insight into which compositions by a particular composer have been performed the most.
 
 **Sample Input**:
-```Hummel,  Johann
+```
+Hummel,  Johann
 ```
 
 ### Summary
