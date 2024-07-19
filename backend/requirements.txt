@@ -1,0 +1,30 @@
+sqlalchemy
+python-dotenv
+fastapi
+uvicorn
+gunicorn
+psycopg2
+snowflake-sqlalchemy
+python-multipart
+
+# Dev Dependencies
+httpx
+pytest
+sqlmodel
+# bcrypt
+# python-jose
+# pydantic
+# google-generativeai
+# openai
+pandas
+# pinecone-client
+Pillow
+requests
+# xmltodict
+# torch
+# transformers
+# google-api-core
+# google-auth
+# google-cloud-core
+# google-cloud-storage
+

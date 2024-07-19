@@ -1,0 +1,331 @@
+[2024-07-19T07:20:58.409+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sandbox.Preprocess_data manual__2024-07-19T07:20:55.949351+00:00 [queued]>
+[2024-07-19T07:20:58.414+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sandbox.Preprocess_data manual__2024-07-19T07:20:55.949351+00:00 [queued]>
+[2024-07-19T07:20:58.414+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-07-19T07:20:58.420+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): Preprocess_data> on 2024-07-19 07:20:55.949351+00:00
+[2024-07-19T07:20:58.425+0000] {standard_task_runner.py:60} INFO - Started process 62 to run task
+[2024-07-19T07:20:58.428+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'sandbox', 'Preprocess_data', 'manual__2024-07-19T07:20:55.949351+00:00', '--job-id', '4', '--raw', '--subdir', 'DAGS_FOLDER/sandbox.py', '--cfg-path', '/tmp/tmpjdvajnjx']
+[2024-07-19T07:20:58.431+0000] {standard_task_runner.py:88} INFO - Job 4: Subtask Preprocess_data
+[2024-07-19T07:20:58.465+0000] {task_command.py:423} INFO - Running <TaskInstance: sandbox.Preprocess_data manual__2024-07-19T07:20:55.949351+00:00 [running]> on host 49d19913db30
+[2024-07-19T07:20:58.521+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sandbox' AIRFLOW_CTX_TASK_ID='Preprocess_data' AIRFLOW_CTX_EXECUTION_DATE='2024-07-19T07:20:55.949351+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-19T07:20:55.949351+00:00'
+[2024-07-19T07:20:58.522+0000] {logging_mixin.py:188} INFO - START!!!!!!!!!!
+[2024-07-19T07:20:58.523+0000] {logging_mixin.py:188} INFO - 
+==================================================
+[2024-07-19T07:20:58.524+0000] {logging_mixin.py:188} INFO - 
+STEP 1: LOADING JSON DATA
+[2024-07-19T07:20:59.481+0000] {logging_mixin.py:188} INFO - 
+==================================================
+[2024-07-19T07:20:59.482+0000] {logging_mixin.py:188} INFO - 
+STEP 2: NORMALIZING JSON DATA INTO DATAFRAMES
+[2024-07-19T07:21:00.643+0000] {logging_mixin.py:188} INFO - DataFrame: nycphil
+[2024-07-19T07:21:00.644+0000] {logging_mixin.py:188} INFO - Number of Rows: 13954
+[2024-07-19T07:21:00.645+0000] {logging_mixin.py:188} INFO - Number of Columns: 6
+[2024-07-19T07:21:00.646+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T07:21:00.646+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T07:21:00.646+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T07:21:00.647+0000] {logging_mixin.py:188} INFO -  - concerts
+[2024-07-19T07:21:00.647+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T07:21:00.648+0000] {logging_mixin.py:188} INFO -  - works
+[2024-07-19T07:21:00.648+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T07:21:00.649+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T07:21:00.649+0000] {logging_mixin.py:188} INFO - DataFrame: concerts_df
+[2024-07-19T07:21:00.650+0000] {logging_mixin.py:188} INFO - Number of Rows: 21607
+[2024-07-19T07:21:00.650+0000] {logging_mixin.py:188} INFO - Number of Columns: 9
+[2024-07-19T07:21:00.650+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T07:21:00.651+0000] {logging_mixin.py:188} INFO -  - concert_Date
+[2024-07-19T07:21:00.651+0000] {logging_mixin.py:188} INFO -  - concert_eventType
+[2024-07-19T07:21:00.651+0000] {logging_mixin.py:188} INFO -  - concert_Venue
+[2024-07-19T07:21:00.652+0000] {logging_mixin.py:188} INFO -  - concert_Location
+[2024-07-19T07:21:00.652+0000] {logging_mixin.py:188} INFO -  - concert_Time
+[2024-07-19T07:21:00.653+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T07:21:00.653+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T07:21:00.653+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T07:21:00.654+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T07:21:00.654+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T07:21:00.655+0000] {logging_mixin.py:188} INFO - DataFrame: works_df
+[2024-07-19T07:21:00.655+0000] {logging_mixin.py:188} INFO - Number of Rows: 82793
+[2024-07-19T07:21:00.655+0000] {logging_mixin.py:188} INFO - Number of Columns: 15
+[2024-07-19T07:21:00.656+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T07:21:00.656+0000] {logging_mixin.py:188} INFO -  - work_workTitle
+[2024-07-19T07:21:00.656+0000] {logging_mixin.py:188} INFO -  - work_conductorName
+[2024-07-19T07:21:00.657+0000] {logging_mixin.py:188} INFO -  - work_ID
+[2024-07-19T07:21:00.657+0000] {logging_mixin.py:188} INFO -  - work_soloists
+[2024-07-19T07:21:00.657+0000] {logging_mixin.py:188} INFO -  - work_composerName
+[2024-07-19T07:21:00.658+0000] {logging_mixin.py:188} INFO -  - work_movement
+[2024-07-19T07:21:00.658+0000] {logging_mixin.py:188} INFO -  - work_interval
+[2024-07-19T07:21:00.658+0000] {logging_mixin.py:188} INFO -  - work_movement.em
+[2024-07-19T07:21:00.658+0000] {logging_mixin.py:188} INFO -  - work_movement._
+[2024-07-19T07:21:00.659+0000] {logging_mixin.py:188} INFO -  - work_workTitle.em
+[2024-07-19T07:21:00.659+0000] {logging_mixin.py:188} INFO -  - work_workTitle._
+[2024-07-19T07:21:00.659+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T07:21:00.660+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T07:21:00.660+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T07:21:00.661+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T07:21:00.661+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T07:21:00.661+0000] {logging_mixin.py:188} INFO - DataFrame: soloists_df
+[2024-07-19T07:21:00.662+0000] {logging_mixin.py:188} INFO - Number of Rows: 56194
+[2024-07-19T07:21:00.662+0000] {logging_mixin.py:188} INFO - Number of Columns: 7
+[2024-07-19T07:21:00.662+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T07:21:00.663+0000] {logging_mixin.py:188} INFO -  - soloist_soloistName
+[2024-07-19T07:21:00.663+0000] {logging_mixin.py:188} INFO -  - soloist_soloistRoles
+[2024-07-19T07:21:00.664+0000] {logging_mixin.py:188} INFO -  - soloist_soloistInstrument
+[2024-07-19T07:21:00.664+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T07:21:00.664+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T07:21:00.665+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T07:21:00.665+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T07:21:00.665+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T07:21:00.666+0000] {logging_mixin.py:188} INFO - 
+==================================================
+[2024-07-19T07:21:00.666+0000] {logging_mixin.py:188} INFO - 
+STEP 3: DATA EXPLORATION
+[2024-07-19T07:21:00.666+0000] {logging_mixin.py:188} INFO - Checking the null percentage of each column in all dfs...
+[2024-07-19T07:21:00.743+0000] {logging_mixin.py:188} INFO - {'nycphil': season       0.0
+orchestra    0.0
+concerts     0.0
+programID    0.0
+works        0.0
+id           0.0
+dtype: float64, 'concerts_df': concert_Date         0.0
+concert_eventType    0.0
+concert_Venue        0.0
+concert_Location     0.0
+concert_Time         0.0
+season               0.0
+orchestra            0.0
+programID            0.0
+id                   0.0
+dtype: float64, 'works_df': work_workTitle        13.734253
+work_conductorName    19.903857
+work_ID                0.000000
+work_soloists          0.000000
+work_composerName     13.728214
+work_movement         69.817497
+work_interval         86.271786
+work_movement.em      99.725822
+work_movement._       99.862307
+work_workTitle.em     99.993961
+work_workTitle._      99.993961
+season                 0.000000
+orchestra              0.000000
+programID              0.000000
+id                     0.000000
+dtype: float64, 'soloists_df': soloist_soloistName          0.0
+soloist_soloistRoles         0.0
+soloist_soloistInstrument    0.0
+season                       0.0
+orchestra                    0.0
+programID                    0.0
+id                           0.0
+dtype: float64}
+[2024-07-19T07:21:00.745+0000] {logging_mixin.py:188} INFO - Dropping columns with null % > 80...
+[2024-07-19T07:21:00.770+0000] {logging_mixin.py:188} INFO - 
+==================================================
+[2024-07-19T07:21:00.770+0000] {logging_mixin.py:188} INFO - 
+STEP 4: DATA CLEANING
+[2024-07-19T07:21:00.771+0000] {logging_mixin.py:188} INFO - Replacing nulls with 'Unknown' value and converting into correct data types...
+[2024-07-19T07:21:00.866+0000] {logging_mixin.py:188} INFO - DataFrame: nycphil
+[2024-07-19T07:21:00.867+0000] {logging_mixin.py:188} INFO - Number of Rows: 13954
+[2024-07-19T07:21:00.868+0000] {logging_mixin.py:188} INFO - Number of Columns: 6
+[2024-07-19T07:21:00.868+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T07:21:00.869+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T07:21:00.869+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T07:21:00.870+0000] {logging_mixin.py:188} INFO -  - concerts
+[2024-07-19T07:21:00.870+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T07:21:00.871+0000] {logging_mixin.py:188} INFO -  - works
+[2024-07-19T07:21:00.871+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T07:21:00.871+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T07:21:00.872+0000] {logging_mixin.py:188} INFO - DataFrame: concerts_df
+[2024-07-19T07:21:00.872+0000] {logging_mixin.py:188} INFO - Number of Rows: 21607
+[2024-07-19T07:21:00.873+0000] {logging_mixin.py:188} INFO - Number of Columns: 9
+[2024-07-19T07:21:00.873+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T07:21:00.874+0000] {logging_mixin.py:188} INFO -  - concert_Date
+[2024-07-19T07:21:00.874+0000] {logging_mixin.py:188} INFO -  - concert_eventType
+[2024-07-19T07:21:00.874+0000] {logging_mixin.py:188} INFO -  - concert_Venue
+[2024-07-19T07:21:00.875+0000] {logging_mixin.py:188} INFO -  - concert_Location
+[2024-07-19T07:21:00.875+0000] {logging_mixin.py:188} INFO -  - concert_Time
+[2024-07-19T07:21:00.875+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T07:21:00.876+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T07:21:00.876+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T07:21:00.877+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T07:21:00.877+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T07:21:00.877+0000] {logging_mixin.py:188} INFO - DataFrame: works_df
+[2024-07-19T07:21:00.878+0000] {logging_mixin.py:188} INFO - Number of Rows: 82793
+[2024-07-19T07:21:00.878+0000] {logging_mixin.py:188} INFO - Number of Columns: 10
+[2024-07-19T07:21:00.879+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T07:21:00.879+0000] {logging_mixin.py:188} INFO -  - work_workTitle
+[2024-07-19T07:21:00.879+0000] {logging_mixin.py:188} INFO -  - work_conductorName
+[2024-07-19T07:21:00.880+0000] {logging_mixin.py:188} INFO -  - work_ID
+[2024-07-19T07:21:00.880+0000] {logging_mixin.py:188} INFO -  - work_soloists
+[2024-07-19T07:21:00.880+0000] {logging_mixin.py:188} INFO -  - work_composerName
+[2024-07-19T07:21:00.881+0000] {logging_mixin.py:188} INFO -  - work_movement
+[2024-07-19T07:21:00.881+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T07:21:00.881+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T07:21:00.882+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T07:21:00.882+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T07:21:00.882+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T07:21:00.883+0000] {logging_mixin.py:188} INFO - DataFrame: soloists_df
+[2024-07-19T07:21:00.883+0000] {logging_mixin.py:188} INFO - Number of Rows: 56194
+[2024-07-19T07:21:00.883+0000] {logging_mixin.py:188} INFO - Number of Columns: 7
+[2024-07-19T07:21:00.883+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T07:21:00.884+0000] {logging_mixin.py:188} INFO -  - soloist_soloistName
+[2024-07-19T07:21:00.884+0000] {logging_mixin.py:188} INFO -  - soloist_soloistRoles
+[2024-07-19T07:21:00.885+0000] {logging_mixin.py:188} INFO -  - soloist_soloistInstrument
+[2024-07-19T07:21:00.885+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T07:21:00.886+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T07:21:00.887+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T07:21:00.887+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T07:21:00.888+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T07:21:00.906+0000] {logging_mixin.py:188} INFO - 
+==================================================
+[2024-07-19T07:21:00.907+0000] {logging_mixin.py:188} INFO - 
+STEP 5: EXPORTING CLEANED DATA AS CSV
+[2024-07-19T07:21:00.938+0000] {logging_mixin.py:188} INFO - Exported nycphil to cleaned_data/nycphil.csv
+[2024-07-19T07:21:01.025+0000] {logging_mixin.py:188} INFO - Exported concerts to cleaned_data/concerts.csv
+[2024-07-19T07:21:01.155+0000] {logging_mixin.py:188} INFO - Exported works to cleaned_data/works.csv
+[2024-07-19T07:21:01.219+0000] {logging_mixin.py:188} INFO - Exported soloists to cleaned_data/soloists.csv
+[2024-07-19T07:21:01.219+0000] {logging_mixin.py:188} INFO - 
+==================================================
+[2024-07-19T07:21:01.220+0000] {logging_mixin.py:188} INFO - 
+STEP 6: CREATING SNOWFLAKE TABLES
+[2024-07-19T07:21:01.220+0000] {logging_mixin.py:188} INFO - Loaded from env None
+[2024-07-19T07:21:01.527+0000] {connection.py:386} INFO - Snowflake Connector for Python Version: 3.7.1, Python Version: 3.8.18, Platform: Linux-5.15.49-linuxkit-pr-aarch64-with-glibc2.34
+[2024-07-19T07:21:01.527+0000] {connection.py:1211} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2024-07-19T07:21:02.240+0000] {cursor.py:1032} INFO - query: [select current_database(), current_schema();]
+[2024-07-19T07:21:02.317+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:02.320+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:02.322+0000] {cursor.py:1032} INFO - query: [ROLLBACK]
+[2024-07-19T07:21:02.409+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:02.410+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:02.411+0000] {cursor.py:1032} INFO - query: [select current_version()]
+[2024-07-19T07:21:02.541+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:02.542+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:02.544+0000] {logging_mixin.py:188} INFO - 8.26.0
+[2024-07-19T07:21:02.545+0000] {cursor.py:1032} INFO - query: [USE DATABASE NYCPHIL_DB]
+[2024-07-19T07:21:02.634+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:02.636+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:02.638+0000] {cursor.py:1032} INFO - query: [USE SCHEMA PUBLIC]
+[2024-07-19T07:21:02.961+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:02.963+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:02.969+0000] {cursor.py:1032} INFO - query: [DESC TABLE /* sqlalchemy:_has_object */ nycphil]
+[2024-07-19T07:21:03.042+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:03.044+0000] {cursor.py:1205} INFO - Number of results in first chunk: 4
+[2024-07-19T07:21:03.047+0000] {cursor.py:1032} INFO - query: [DESC TABLE /* sqlalchemy:_has_object */ concerts]
+[2024-07-19T07:21:03.122+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:03.124+0000] {cursor.py:1205} INFO - Number of results in first chunk: 7
+[2024-07-19T07:21:03.125+0000] {cursor.py:1032} INFO - query: [DESC TABLE /* sqlalchemy:_has_object */ works]
+[2024-07-19T07:21:03.304+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:03.305+0000] {cursor.py:1205} INFO - Number of results in first chunk: 6
+[2024-07-19T07:21:03.307+0000] {cursor.py:1032} INFO - query: [DESC TABLE /* sqlalchemy:_has_object */ soloists]
+[2024-07-19T07:21:03.368+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:03.369+0000] {cursor.py:1205} INFO - Number of results in first chunk: 5
+[2024-07-19T07:21:03.370+0000] {logging_mixin.py:188} INFO - 
+==================================================
+[2024-07-19T07:21:03.370+0000] {logging_mixin.py:188} INFO - 
+STEP 7: UPLOADING TO SNOWFLAKE
+[2024-07-19T07:21:03.371+0000] {logging_mixin.py:188} INFO - Creating stage nycphil...
+[2024-07-19T07:21:03.372+0000] {logging_mixin.py:188} INFO - CREATE OR REPLACE STAGE nycphil DIRECTORY = ( ENABLE = true ) FILE_FORMAT = (TYPE = 'CSV' field_optionally_enclosed_by='"' SKIP_HEADER = 1);
+[2024-07-19T07:21:03.372+0000] {cursor.py:1032} INFO - query: [CREATE OR REPLACE STAGE nycphil DIRECTORY = ( ENABLE = true ) FILE_FORMAT = (TYP...]
+[2024-07-19T07:21:03.770+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:03.774+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:03.776+0000] {logging_mixin.py:188} INFO - Done
+[2024-07-19T07:21:03.779+0000] {logging_mixin.py:188} INFO - Uploading cleaned_data/nycphil.csv to stage nycphil...
+[2024-07-19T07:21:03.780+0000] {logging_mixin.py:188} INFO - PUT file://cleaned_data/nycphil.csv @NYCPHIL_DB.public.nycphil;
+[2024-07-19T07:21:03.783+0000] {cursor.py:1032} INFO - query: [PUT file://cleaned_data/nycphil.csv @NYCPHIL_DB.public.nycphil;]
+[2024-07-19T07:21:03.974+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:04.712+0000] {logging_mixin.py:188} INFO - Done
+[2024-07-19T07:21:04.714+0000] {logging_mixin.py:188} INFO - Loading data from nycphil.csv to table nycphil...
+[2024-07-19T07:21:04.716+0000] {logging_mixin.py:188} INFO - COPY INTO nycphil (id, season, orchestra, program_id)
+            FROM @NYCPHIL_DB.public.nycphil
+            FILE_FORMAT = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1)
+            
+[2024-07-19T07:21:04.717+0000] {cursor.py:1032} INFO - query: [COPY INTO nycphil (id, season, orchestra, program_id) FROM @NYCPHIL_DB.public.ny...]
+[2024-07-19T07:21:06.995+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:06.997+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:06.998+0000] {cursor.py:1032} INFO - query: [COMMIT]
+[2024-07-19T07:21:07.302+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:07.304+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:07.306+0000] {logging_mixin.py:188} INFO - Done
+[2024-07-19T07:21:07.307+0000] {logging_mixin.py:188} INFO - Creating stage soloists...
+[2024-07-19T07:21:07.308+0000] {logging_mixin.py:188} INFO - CREATE OR REPLACE STAGE soloists DIRECTORY = ( ENABLE = true ) FILE_FORMAT = (TYPE = 'CSV' field_optionally_enclosed_by='"' SKIP_HEADER = 1);
+[2024-07-19T07:21:07.309+0000] {cursor.py:1032} INFO - query: [CREATE OR REPLACE STAGE soloists DIRECTORY = ( ENABLE = true ) FILE_FORMAT = (TY...]
+[2024-07-19T07:21:07.713+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:07.718+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:07.721+0000] {logging_mixin.py:188} INFO - Done
+[2024-07-19T07:21:07.723+0000] {logging_mixin.py:188} INFO - Uploading cleaned_data/soloists.csv to stage soloists...
+[2024-07-19T07:21:07.724+0000] {logging_mixin.py:188} INFO - PUT file://cleaned_data/soloists.csv @NYCPHIL_DB.public.soloists;
+[2024-07-19T07:21:07.726+0000] {cursor.py:1032} INFO - query: [PUT file://cleaned_data/soloists.csv @NYCPHIL_DB.public.soloists;]
+[2024-07-19T07:21:07.915+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:08.256+0000] {logging_mixin.py:188} INFO - Done
+[2024-07-19T07:21:08.258+0000] {logging_mixin.py:188} INFO - Loading data from soloists.csv to table soloists...
+[2024-07-19T07:21:08.258+0000] {logging_mixin.py:188} INFO - COPY INTO soloists (soloist_name, soloist_roles, soloist_instrument)
+            FROM @NYCPHIL_DB.public.soloists
+            FILE_FORMAT = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1)
+            
+[2024-07-19T07:21:08.260+0000] {cursor.py:1032} INFO - query: [COPY INTO soloists (soloist_name, soloist_roles, soloist_instrument) FROM @NYCPH...]
+[2024-07-19T07:21:10.171+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:10.175+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:10.179+0000] {cursor.py:1032} INFO - query: [COMMIT]
+[2024-07-19T07:21:10.380+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:10.382+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:10.383+0000] {logging_mixin.py:188} INFO - Done
+[2024-07-19T07:21:10.384+0000] {logging_mixin.py:188} INFO - Creating stage works...
+[2024-07-19T07:21:10.386+0000] {logging_mixin.py:188} INFO - CREATE OR REPLACE STAGE works DIRECTORY = ( ENABLE = true ) FILE_FORMAT = (TYPE = 'CSV' field_optionally_enclosed_by='"' SKIP_HEADER = 1);
+[2024-07-19T07:21:10.387+0000] {cursor.py:1032} INFO - query: [CREATE OR REPLACE STAGE works DIRECTORY = ( ENABLE = true ) FILE_FORMAT = (TYPE ...]
+[2024-07-19T07:21:10.785+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:10.789+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:10.791+0000] {logging_mixin.py:188} INFO - Done
+[2024-07-19T07:21:10.792+0000] {logging_mixin.py:188} INFO - Uploading cleaned_data/works.csv to stage works...
+[2024-07-19T07:21:10.793+0000] {logging_mixin.py:188} INFO - PUT file://cleaned_data/works.csv @NYCPHIL_DB.public.works;
+[2024-07-19T07:21:10.795+0000] {cursor.py:1032} INFO - query: [PUT file://cleaned_data/works.csv @NYCPHIL_DB.public.works;]
+[2024-07-19T07:21:11.170+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:11.823+0000] {logging_mixin.py:188} INFO - Done
+[2024-07-19T07:21:11.827+0000] {logging_mixin.py:188} INFO - Loading data from works.csv to table works...
+[2024-07-19T07:21:11.829+0000] {logging_mixin.py:188} INFO - COPY INTO works (work_work_title, work_conductor_name, work_composer_name, work_movement, nycphil_id)
+            FROM @NYCPHIL_DB.public.works
+            FILE_FORMAT = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1)
+            
+[2024-07-19T07:21:11.831+0000] {cursor.py:1032} INFO - query: [COPY INTO works (work_work_title, work_conductor_name, work_composer_name, work_...]
+[2024-07-19T07:21:13.649+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:13.650+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:13.652+0000] {cursor.py:1032} INFO - query: [COMMIT]
+[2024-07-19T07:21:14.032+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:14.037+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:14.039+0000] {logging_mixin.py:188} INFO - Done
+[2024-07-19T07:21:14.041+0000] {logging_mixin.py:188} INFO - Creating stage concerts...
+[2024-07-19T07:21:14.042+0000] {logging_mixin.py:188} INFO - CREATE OR REPLACE STAGE concerts DIRECTORY = ( ENABLE = true ) FILE_FORMAT = (TYPE = 'CSV' field_optionally_enclosed_by='"' SKIP_HEADER = 1);
+[2024-07-19T07:21:14.043+0000] {cursor.py:1032} INFO - query: [CREATE OR REPLACE STAGE concerts DIRECTORY = ( ENABLE = true ) FILE_FORMAT = (TY...]
+[2024-07-19T07:21:14.348+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:14.349+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:14.351+0000] {logging_mixin.py:188} INFO - Done
+[2024-07-19T07:21:14.352+0000] {logging_mixin.py:188} INFO - Uploading cleaned_data/concerts.csv to stage concerts...
+[2024-07-19T07:21:14.353+0000] {logging_mixin.py:188} INFO - PUT file://cleaned_data/concerts.csv @NYCPHIL_DB.public.concerts;
+[2024-07-19T07:21:14.353+0000] {cursor.py:1032} INFO - query: [PUT file://cleaned_data/concerts.csv @NYCPHIL_DB.public.concerts;]
+[2024-07-19T07:21:14.492+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:14.924+0000] {logging_mixin.py:188} INFO - Done
+[2024-07-19T07:21:14.930+0000] {logging_mixin.py:188} INFO - Loading data from concerts.csv to table concerts...
+[2024-07-19T07:21:14.932+0000] {logging_mixin.py:188} INFO - COPY INTO concerts (concert_date, concert_event_type, concert_venue, concert_location, concert_time, nycphil_id)
+            FROM @NYCPHIL_DB.public.concerts
+            FILE_FORMAT = (type = csv field_optionally_enclosed_by='"' SKIP_HEADER = 1)
+            
+[2024-07-19T07:21:14.935+0000] {cursor.py:1032} INFO - query: [COPY INTO concerts (concert_date, concert_event_type, concert_venue, concert_loc...]
+[2024-07-19T07:21:16.331+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:16.335+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:16.338+0000] {cursor.py:1032} INFO - query: [COMMIT]
+[2024-07-19T07:21:16.724+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:16.728+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:16.730+0000] {logging_mixin.py:188} INFO - Done
+[2024-07-19T07:21:16.732+0000] {logging_mixin.py:188} INFO - DONE!!!!!!!!!!
+[2024-07-19T07:21:16.796+0000] {cursor.py:1032} INFO - query: [ROLLBACK]
+[2024-07-19T07:21:16.860+0000] {cursor.py:1045} INFO - query execution done
+[2024-07-19T07:21:16.861+0000] {cursor.py:1205} INFO - Number of results in first chunk: 1
+[2024-07-19T07:21:16.861+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-07-19T07:21:16.873+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=sandbox, task_id=Preprocess_data, execution_date=20240719T072055, start_date=20240719T072058, end_date=20240719T072116
+[2024-07-19T07:21:16.972+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-07-19T07:21:16.990+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

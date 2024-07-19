@@ -1,0 +1,31 @@
+[2024-07-19T00:08:38.967+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sandbox.Preprocess_data scheduled__2024-07-18T00:00:00+00:00 [queued]>
+[2024-07-19T00:08:38.973+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sandbox.Preprocess_data scheduled__2024-07-18T00:00:00+00:00 [queued]>
+[2024-07-19T00:08:38.974+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-07-19T00:08:38.983+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): Preprocess_data> on 2024-07-18 00:00:00+00:00
+[2024-07-19T00:08:38.989+0000] {standard_task_runner.py:60} INFO - Started process 3939 to run task
+[2024-07-19T00:08:38.994+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'sandbox', 'Preprocess_data', 'scheduled__2024-07-18T00:00:00+00:00', '--job-id', '48', '--raw', '--subdir', 'DAGS_FOLDER/sandbox.py', '--cfg-path', '/tmp/tmpvoekhhwo']
+[2024-07-19T00:08:38.998+0000] {standard_task_runner.py:88} INFO - Job 48: Subtask Preprocess_data
+[2024-07-19T00:08:39.054+0000] {task_command.py:423} INFO - Running <TaskInstance: sandbox.Preprocess_data scheduled__2024-07-18T00:00:00+00:00 [running]> on host 7ce5f5d8061b
+[2024-07-19T00:08:39.364+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sandbox' AIRFLOW_CTX_TASK_ID='Preprocess_data' AIRFLOW_CTX_EXECUTION_DATE='2024-07-18T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-07-18T00:00:00+00:00'
+[2024-07-19T00:08:39.366+0000] {logging_mixin.py:188} INFO - START!!!!!!!!!!
+[2024-07-19T00:08:39.367+0000] {logging_mixin.py:188} INFO - 
+==================================================
+[2024-07-19T00:08:39.367+0000] {logging_mixin.py:188} INFO - 
+STEP 1: LOADING JSON DATA
+[2024-07-19T00:08:39.369+0000] {taskinstance.py:2731} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 444, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 414, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 200, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 217, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/sandbox.py", line 116, in preprocess_data
+    with open('../raw_nyc_phil.json') as f:
+FileNotFoundError: [Errno 2] No such file or directory: '../raw_nyc_phil.json'
+[2024-07-19T00:08:39.381+0000] {taskinstance.py:1149} INFO - Marking task as FAILED. dag_id=sandbox, task_id=Preprocess_data, execution_date=20240718T000000, start_date=20240719T000838, end_date=20240719T000839
+[2024-07-19T00:08:39.392+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 48 for task Preprocess_data ([Errno 2] No such file or directory: '../raw_nyc_phil.json'; 3939)
+[2024-07-19T00:08:39.435+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-07-19T00:08:39.453+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check

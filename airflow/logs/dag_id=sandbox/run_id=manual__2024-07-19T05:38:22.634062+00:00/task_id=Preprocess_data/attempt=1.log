@@ -1,0 +1,189 @@
+[2024-07-19T05:38:25.125+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: sandbox.Preprocess_data manual__2024-07-19T05:38:22.634062+00:00 [queued]>
+[2024-07-19T05:38:25.129+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: sandbox.Preprocess_data manual__2024-07-19T05:38:22.634062+00:00 [queued]>
+[2024-07-19T05:38:25.130+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 1
+[2024-07-19T05:38:25.136+0000] {taskinstance.py:2217} INFO - Executing <Task(PythonOperator): Preprocess_data> on 2024-07-19 05:38:22.634062+00:00
+[2024-07-19T05:38:25.140+0000] {standard_task_runner.py:60} INFO - Started process 133 to run task
+[2024-07-19T05:38:25.143+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'sandbox', 'Preprocess_data', 'manual__2024-07-19T05:38:22.634062+00:00', '--job-id', '52', '--raw', '--subdir', 'DAGS_FOLDER/sandbox.py', '--cfg-path', '/tmp/tmpow23ngrv']
+[2024-07-19T05:38:25.145+0000] {standard_task_runner.py:88} INFO - Job 52: Subtask Preprocess_data
+[2024-07-19T05:38:25.177+0000] {task_command.py:423} INFO - Running <TaskInstance: sandbox.Preprocess_data manual__2024-07-19T05:38:22.634062+00:00 [running]> on host 292e779882b7
+[2024-07-19T05:38:25.331+0000] {taskinstance.py:2513} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='sandbox' AIRFLOW_CTX_TASK_ID='Preprocess_data' AIRFLOW_CTX_EXECUTION_DATE='2024-07-19T05:38:22.634062+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-07-19T05:38:22.634062+00:00'
+[2024-07-19T05:38:25.332+0000] {logging_mixin.py:188} INFO - START!!!!!!!!!!
+[2024-07-19T05:38:25.333+0000] {logging_mixin.py:188} INFO - 
+==================================================
+[2024-07-19T05:38:25.333+0000] {logging_mixin.py:188} INFO - 
+STEP 1: LOADING JSON DATA
+[2024-07-19T05:38:25.951+0000] {logging_mixin.py:188} INFO - 
+==================================================
+[2024-07-19T05:38:25.952+0000] {logging_mixin.py:188} INFO - 
+STEP 2: NORMALIZING JSON DATA INTO DATAFRAMES
+[2024-07-19T05:38:27.232+0000] {logging_mixin.py:188} INFO - DataFrame: nycphil
+[2024-07-19T05:38:27.234+0000] {logging_mixin.py:188} INFO - Number of Rows: 13954
+[2024-07-19T05:38:27.235+0000] {logging_mixin.py:188} INFO - Number of Columns: 6
+[2024-07-19T05:38:27.235+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T05:38:27.236+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T05:38:27.236+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T05:38:27.237+0000] {logging_mixin.py:188} INFO -  - concerts
+[2024-07-19T05:38:27.238+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T05:38:27.238+0000] {logging_mixin.py:188} INFO -  - works
+[2024-07-19T05:38:27.239+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T05:38:27.239+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T05:38:27.239+0000] {logging_mixin.py:188} INFO - DataFrame: concerts_df
+[2024-07-19T05:38:27.240+0000] {logging_mixin.py:188} INFO - Number of Rows: 21607
+[2024-07-19T05:38:27.241+0000] {logging_mixin.py:188} INFO - Number of Columns: 9
+[2024-07-19T05:38:27.241+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T05:38:27.241+0000] {logging_mixin.py:188} INFO -  - concert_Date
+[2024-07-19T05:38:27.242+0000] {logging_mixin.py:188} INFO -  - concert_eventType
+[2024-07-19T05:38:27.242+0000] {logging_mixin.py:188} INFO -  - concert_Venue
+[2024-07-19T05:38:27.243+0000] {logging_mixin.py:188} INFO -  - concert_Location
+[2024-07-19T05:38:27.243+0000] {logging_mixin.py:188} INFO -  - concert_Time
+[2024-07-19T05:38:27.245+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T05:38:27.245+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T05:38:27.246+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T05:38:27.246+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T05:38:27.246+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T05:38:27.247+0000] {logging_mixin.py:188} INFO - DataFrame: works_df
+[2024-07-19T05:38:27.247+0000] {logging_mixin.py:188} INFO - Number of Rows: 82793
+[2024-07-19T05:38:27.248+0000] {logging_mixin.py:188} INFO - Number of Columns: 15
+[2024-07-19T05:38:27.248+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T05:38:27.249+0000] {logging_mixin.py:188} INFO -  - work_workTitle
+[2024-07-19T05:38:27.249+0000] {logging_mixin.py:188} INFO -  - work_conductorName
+[2024-07-19T05:38:27.249+0000] {logging_mixin.py:188} INFO -  - work_ID
+[2024-07-19T05:38:27.250+0000] {logging_mixin.py:188} INFO -  - work_soloists
+[2024-07-19T05:38:27.250+0000] {logging_mixin.py:188} INFO -  - work_composerName
+[2024-07-19T05:38:27.251+0000] {logging_mixin.py:188} INFO -  - work_movement
+[2024-07-19T05:38:27.251+0000] {logging_mixin.py:188} INFO -  - work_interval
+[2024-07-19T05:38:27.252+0000] {logging_mixin.py:188} INFO -  - work_movement.em
+[2024-07-19T05:38:27.252+0000] {logging_mixin.py:188} INFO -  - work_movement._
+[2024-07-19T05:38:27.252+0000] {logging_mixin.py:188} INFO -  - work_workTitle.em
+[2024-07-19T05:38:27.253+0000] {logging_mixin.py:188} INFO -  - work_workTitle._
+[2024-07-19T05:38:27.253+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T05:38:27.254+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T05:38:27.254+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T05:38:27.254+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T05:38:27.255+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T05:38:27.255+0000] {logging_mixin.py:188} INFO - DataFrame: soloists_df
+[2024-07-19T05:38:27.256+0000] {logging_mixin.py:188} INFO - Number of Rows: 56194
+[2024-07-19T05:38:27.256+0000] {logging_mixin.py:188} INFO - Number of Columns: 7
+[2024-07-19T05:38:27.256+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T05:38:27.257+0000] {logging_mixin.py:188} INFO -  - soloist_soloistName
+[2024-07-19T05:38:27.257+0000] {logging_mixin.py:188} INFO -  - soloist_soloistRoles
+[2024-07-19T05:38:27.257+0000] {logging_mixin.py:188} INFO -  - soloist_soloistInstrument
+[2024-07-19T05:38:27.258+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T05:38:27.258+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T05:38:27.259+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T05:38:27.259+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T05:38:27.259+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T05:38:27.260+0000] {logging_mixin.py:188} INFO - 
+==================================================
+[2024-07-19T05:38:27.260+0000] {logging_mixin.py:188} INFO - 
+STEP 3: DATA EXPLORATION
+[2024-07-19T05:38:27.261+0000] {logging_mixin.py:188} INFO - Checking the null percentage of each column in all dfs...
+[2024-07-19T05:38:27.346+0000] {logging_mixin.py:188} INFO - {'nycphil': season       0.0
+orchestra    0.0
+concerts     0.0
+programID    0.0
+works        0.0
+id           0.0
+dtype: float64, 'concerts_df': concert_Date         0.0
+concert_eventType    0.0
+concert_Venue        0.0
+concert_Location     0.0
+concert_Time         0.0
+season               0.0
+orchestra            0.0
+programID            0.0
+id                   0.0
+dtype: float64, 'works_df': work_workTitle        13.734253
+work_conductorName    19.903857
+work_ID                0.000000
+work_soloists          0.000000
+work_composerName     13.728214
+work_movement         69.817497
+work_interval         86.271786
+work_movement.em      99.725822
+work_movement._       99.862307
+work_workTitle.em     99.993961
+work_workTitle._      99.993961
+season                 0.000000
+orchestra              0.000000
+programID              0.000000
+id                     0.000000
+dtype: float64, 'soloists_df': soloist_soloistName          0.0
+soloist_soloistRoles         0.0
+soloist_soloistInstrument    0.0
+season                       0.0
+orchestra                    0.0
+programID                    0.0
+id                           0.0
+dtype: float64}
+[2024-07-19T05:38:27.347+0000] {logging_mixin.py:188} INFO - Dropping columns with null % > 80...
+[2024-07-19T05:38:27.371+0000] {logging_mixin.py:188} INFO - 
+==================================================
+[2024-07-19T05:38:27.372+0000] {logging_mixin.py:188} INFO - 
+STEP 4: DATA CLEANING
+[2024-07-19T05:38:27.373+0000] {logging_mixin.py:188} INFO - Replacing nulls with 'Unknown' value and converting into correct data types...
+[2024-07-19T05:38:27.460+0000] {logging_mixin.py:188} INFO - DataFrame: nycphil
+[2024-07-19T05:38:27.460+0000] {logging_mixin.py:188} INFO - Number of Rows: 13954
+[2024-07-19T05:38:27.461+0000] {logging_mixin.py:188} INFO - Number of Columns: 6
+[2024-07-19T05:38:27.461+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T05:38:27.462+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T05:38:27.462+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T05:38:27.463+0000] {logging_mixin.py:188} INFO -  - concerts
+[2024-07-19T05:38:27.463+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T05:38:27.463+0000] {logging_mixin.py:188} INFO -  - works
+[2024-07-19T05:38:27.464+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T05:38:27.464+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T05:38:27.464+0000] {logging_mixin.py:188} INFO - DataFrame: concerts_df
+[2024-07-19T05:38:27.465+0000] {logging_mixin.py:188} INFO - Number of Rows: 21607
+[2024-07-19T05:38:27.465+0000] {logging_mixin.py:188} INFO - Number of Columns: 9
+[2024-07-19T05:38:27.465+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T05:38:27.466+0000] {logging_mixin.py:188} INFO -  - concert_Date
+[2024-07-19T05:38:27.466+0000] {logging_mixin.py:188} INFO -  - concert_eventType
+[2024-07-19T05:38:27.466+0000] {logging_mixin.py:188} INFO -  - concert_Venue
+[2024-07-19T05:38:27.467+0000] {logging_mixin.py:188} INFO -  - concert_Location
+[2024-07-19T05:38:27.467+0000] {logging_mixin.py:188} INFO -  - concert_Time
+[2024-07-19T05:38:27.467+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T05:38:27.468+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T05:38:27.468+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T05:38:27.468+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T05:38:27.469+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T05:38:27.469+0000] {logging_mixin.py:188} INFO - DataFrame: works_df
+[2024-07-19T05:38:27.469+0000] {logging_mixin.py:188} INFO - Number of Rows: 82793
+[2024-07-19T05:38:27.470+0000] {logging_mixin.py:188} INFO - Number of Columns: 10
+[2024-07-19T05:38:27.470+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T05:38:27.470+0000] {logging_mixin.py:188} INFO -  - work_workTitle
+[2024-07-19T05:38:27.471+0000] {logging_mixin.py:188} INFO -  - work_conductorName
+[2024-07-19T05:38:27.471+0000] {logging_mixin.py:188} INFO -  - work_ID
+[2024-07-19T05:38:27.471+0000] {logging_mixin.py:188} INFO -  - work_soloists
+[2024-07-19T05:38:27.471+0000] {logging_mixin.py:188} INFO -  - work_composerName
+[2024-07-19T05:38:27.472+0000] {logging_mixin.py:188} INFO -  - work_movement
+[2024-07-19T05:38:27.472+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T05:38:27.472+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T05:38:27.472+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T05:38:27.473+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T05:38:27.473+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T05:38:27.473+0000] {logging_mixin.py:188} INFO - DataFrame: soloists_df
+[2024-07-19T05:38:27.474+0000] {logging_mixin.py:188} INFO - Number of Rows: 56194
+[2024-07-19T05:38:27.474+0000] {logging_mixin.py:188} INFO - Number of Columns: 7
+[2024-07-19T05:38:27.474+0000] {logging_mixin.py:188} INFO - Column Names:
+[2024-07-19T05:38:27.475+0000] {logging_mixin.py:188} INFO -  - soloist_soloistName
+[2024-07-19T05:38:27.475+0000] {logging_mixin.py:188} INFO -  - soloist_soloistRoles
+[2024-07-19T05:38:27.475+0000] {logging_mixin.py:188} INFO -  - soloist_soloistInstrument
+[2024-07-19T05:38:27.476+0000] {logging_mixin.py:188} INFO -  - season
+[2024-07-19T05:38:27.476+0000] {logging_mixin.py:188} INFO -  - orchestra
+[2024-07-19T05:38:27.476+0000] {logging_mixin.py:188} INFO -  - programID
+[2024-07-19T05:38:27.476+0000] {logging_mixin.py:188} INFO -  - id
+[2024-07-19T05:38:27.477+0000] {logging_mixin.py:188} INFO - 
+--------------------------------------------------
+[2024-07-19T05:38:27.477+0000] {logging_mixin.py:188} INFO - DONE!!!!!!!!!!
+[2024-07-19T05:38:27.511+0000] {python.py:202} INFO - Done. Returned value was: None
+[2024-07-19T05:38:27.520+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=sandbox, task_id=Preprocess_data, execution_date=20240719T053822, start_date=20240719T053825, end_date=20240719T053827
+[2024-07-19T05:38:27.590+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-07-19T05:38:27.603+0000] {taskinstance.py:3312} INFO - 0 downstream tasks scheduled from follow-on schedule check
